@@ -1,0 +1,3 @@
+enum PluginEnum{
+     getUp
+}
