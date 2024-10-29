@@ -9,9 +9,9 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 
 class GetUpRoutineActive extends StatefulWidget {
-  const GetUpRoutineActive(this.data, {super.key, required this.stepIndex});
+  const GetUpRoutineActive(/*this.data,*/ this.stepIndex, {super.key});
 
-  final GetUpRoutineData data;
+  // final GetUpRoutineData data;
   final int stepIndex;
 
   @override
