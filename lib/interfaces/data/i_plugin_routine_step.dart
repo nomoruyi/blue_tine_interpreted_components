@@ -1,7 +1,6 @@
-import 'package:equatable/equatable.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-abstract class IPluginRoutineStep with EquatableMixin, HiveObjectMixin {
+abstract class IPluginRoutineStep with HiveObjectMixin {
   //region VARIABLES
   @HiveField(0, defaultValue: 'Step Name')
   final String name;
@@ -17,19 +16,12 @@ abstract class IPluginRoutineStep with EquatableMixin, HiveObjectMixin {
 
   @HiveField(4, defaultValue: false)
   final bool autoNext;
+
   //endregion
 
   IPluginRoutineStep(this.name, this.description, {required this.duration, this.isActive = true, this.autoNext = false});
 
-/*  IPluginRoutineStepData toData({String? newDescription, required Duration actualDuration })
-  {
-    return IPluginRoutineStepData(name, actualDuration, description: description, duration: duration)
+//region METHODS
 
-  } */
-
-  //region METHODS
-
-  @override
-  List<Object?> get props => [name, description];
-  //endregion
+//endregion
 }

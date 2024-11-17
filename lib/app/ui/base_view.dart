@@ -1,7 +1,7 @@
-import 'package:blue_tine_interpreted_components/app/ui/base/pages/analysis_view.dart';
-import 'package:blue_tine_interpreted_components/app/ui/base/pages/dashboard_view.dart';
-import 'package:blue_tine_interpreted_components/app/ui/base/pages/settings_view.dart';
-import 'package:blue_tine_interpreted_components/app/ui/base/pages/store_view.dart';
+import 'package:blue_tine_interpreted_components/app/ui/pages/analytics_view.dart';
+import 'package:blue_tine_interpreted_components/app/ui/pages/dashboard_view.dart';
+import 'package:blue_tine_interpreted_components/app/ui/pages/settings_view.dart';
+import 'package:blue_tine_interpreted_components/app/ui/pages/store_view.dart';
 import 'package:flutter/material.dart';
 
 class BaseView extends StatefulWidget {
@@ -29,7 +29,7 @@ class _BaseViewState extends State<BaseView> {
     _pages = [
       const StoreView(),
       const DashboardView(),
-      const AnalysisView(),
+      const AnalyticsView(),
       const SettingsView(),
     ];
   }

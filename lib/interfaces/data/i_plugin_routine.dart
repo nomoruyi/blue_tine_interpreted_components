@@ -1,10 +1,9 @@
 import 'package:blue_tine_interpreted_components/interfaces/data/i_plugin_routine_step.dart';
 import 'package:blue_tine_interpreted_components/utils/_utils.export.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-abstract class IPluginRoutine with EquatableMixin, HiveObjectMixin {
+abstract class IPluginRoutine with HiveObjectMixin {
   //region VARIABLES
   @HiveField(0, defaultValue: 'Routine Name')
   final String name;
@@ -34,9 +33,7 @@ abstract class IPluginRoutine with EquatableMixin, HiveObjectMixin {
 
   //region METHODS
   Duration _calcDuration() => steps.fold(Duration.zero, (duration, step) => duration + step.duration);
-
-  @override
-  List<Object?> get props => [name, steps];
-  //endregion
+//endregion
 
 }
+

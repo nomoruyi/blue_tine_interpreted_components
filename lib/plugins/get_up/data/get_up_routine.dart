@@ -5,7 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 part 'get_up_routine.g.dart';
 
-@HiveType(typeId: 21)
+@HiveType(typeId: 22)
 class GetUpRoutine extends IPluginRoutine {
   GetUpRoutine(super.name, super.description, {required super.steps, required super.startTime, super.reminder = true});
 }

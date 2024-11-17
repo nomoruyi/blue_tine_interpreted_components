@@ -3,7 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 part 'get_up_routine_step.g.dart';
 
-@HiveType(typeId: 23)
+@HiveType(typeId: 24)
 class GetUpRoutineStep extends IPluginRoutineStep {
   GetUpRoutineStep(super.name,super.description, { required super.duration});
 }

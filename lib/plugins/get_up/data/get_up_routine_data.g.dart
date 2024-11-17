@@ -8,7 +8,7 @@ part of 'get_up_routine_data.dart';
 
 class GetUpRoutineDataAdapter extends TypeAdapter<GetUpRoutineData> {
   @override
-  final int typeId = 22;
+  final int typeId = 23;
 
   @override
   GetUpRoutineData read(BinaryReader reader) {

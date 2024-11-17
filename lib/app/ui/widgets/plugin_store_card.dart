@@ -1,9 +1,8 @@
-import 'package:blue_tine_interpreted_components/app/cubits/routine/routine_cubit.dart';
-import 'package:blue_tine_interpreted_components/interfaces/ui/i_plugin_stateful_widget.dart';
+import 'package:blue_tine_interpreted_components/interfaces/controller/plugin_controller.dart';
 import 'package:flutter/material.dart';
 
-class PluginStoreCard extends IPluginStatefulWidget {
-  const PluginStoreCard(super.plugin, this.pluginController, {super.key});
+class PluginStoreCard extends StatefulWidget {
+  const PluginStoreCard(this.pluginController, {super.key});
 
   final PluginController pluginController;
 
@@ -16,26 +15,31 @@ class _PluginStoreCardState extends State<PluginStoreCard> {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: Text(widget.plugin.name),
+        leading: widget.pluginController.isInstalled ? const Icon(Icons.download_done_rounded) : const Icon(Icons.download_rounded),
+        title: Text(widget.pluginController.plugin.name),
         subtitle: const Text('plugin.description'),
         onTap: () => _openDialog(context),
       ),
     );
   }
 
-  _openDialog(BuildContext context) {
-    enable(){
-      setState((){
-        widget.pluginController.enable();
-      });
-      Navigator.of(context).pop();
+  void _openDialog(BuildContext context) {
+    Future<void> install() async {
+      await widget.pluginController.install();
+
+      if (context.mounted) {
+        Navigator.of(context).pop();
+        Navigator.of(context).popAndPushNamed('/');
+      }
     }
 
-    disable(){
-      setState((){
-        widget.pluginController.disable();
-      });
-      Navigator.of(context).pop();
+    Future<void> uninstall() async {
+      await widget.pluginController.uninstall();
+
+      if (context.mounted) {
+        Navigator.of(context).pop();
+        Navigator.of(context).popAndPushNamed('/');
+      }
     }
 
     showDialog(
@@ -49,8 +53,16 @@ class _PluginStoreCardState extends State<PluginStoreCard> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ElevatedButton(onPressed: () => enable(), child: const Text('Installieren')),
-                  ElevatedButton(onPressed: () => disable(), child: const Text('Deinstallieren')),
+                  widget.pluginController.isInstalled
+                      ? ElevatedButton(
+                      onPressed: () async =>await  uninstall(),
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.red.shade500),
+                      child: const Text('Deinstallieren'))
+                      : ElevatedButton(
+                    onPressed: () async => await install(),
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.green.shade500),
+                    child: const Text('Installieren'),
+                  )
                 ],
               )
             ],

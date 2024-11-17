@@ -5,7 +5,7 @@ import 'package:blue_tine_interpreted_components/plugins/plugin.enum.dart';
 
 part 'get_up_data.g.dart';
 
-@HiveType(typeId: 20)
+@HiveType(typeId: 21)
 class GetUpData extends IPluginData {
   GetUpData(super.plugin, { required super.description});
 }

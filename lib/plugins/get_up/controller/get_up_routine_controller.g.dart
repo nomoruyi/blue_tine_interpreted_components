@@ -1,38 +1,34 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'get_up_data.dart';
+part of 'get_up_routine_controller.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class GetUpDataAdapter extends TypeAdapter<GetUpData> {
+class GetUpControllerAdapter extends TypeAdapter<GetUpController> {
   @override
-  final int typeId = 21;
+  final int typeId = 20;
 
   @override
-  GetUpData read(BinaryReader reader) {
+  GetUpController read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return GetUpData(
+    return GetUpController(
       fields[0] as PluginEnum,
-      description:
-          fields[2] == null ? 'Plugin Description' : fields[2] as String,
-    );
+    )..isInstalled = fields[1] == null ? false : fields[1] as bool;
   }
 
   @override
-  void write(BinaryWriter writer, GetUpData obj) {
+  void write(BinaryWriter writer, GetUpController obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(2)
       ..writeByte(0)
       ..write(obj.plugin)
       ..writeByte(1)
-      ..write(obj.name)
-      ..writeByte(2)
-      ..write(obj.description);
+      ..write(obj.isInstalled);
   }
 
   @override
@@ -41,7 +37,7 @@ class GetUpDataAdapter extends TypeAdapter<GetUpData> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is GetUpDataAdapter &&
+      other is GetUpControllerAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
