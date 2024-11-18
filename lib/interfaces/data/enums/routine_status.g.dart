@@ -8,7 +8,7 @@ part of 'routine_status.dart';
 
 class RoutineStatusAdapter extends TypeAdapter<RoutineStatus> {
   @override
-  final int typeId = 0;
+  final int typeId = 1;
 
   @override
   RoutineStatus read(BinaryReader reader) {

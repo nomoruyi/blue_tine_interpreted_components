@@ -2,17 +2,18 @@ import 'package:blue_tine_interpreted_components/interfaces/controller/plugin_co
 import 'package:blue_tine_interpreted_components/interfaces/data/i_plugin_routine_data.dart';
 import 'package:blue_tine_interpreted_components/plugins/get_up/data/get_up_routine_data.dart';
 import 'package:blue_tine_interpreted_components/plugins/get_up/get_up.dart';
-import 'package:blue_tine_interpreted_components/plugins/get_up/ui/get_up_view.dart';
+import 'package:blue_tine_interpreted_components/plugins/get_up/ui/get_up_ui.dart';
 import 'package:blue_tine_interpreted_components/plugins/plugin.enum.dart';
 import 'package:blue_tine_interpreted_components/utils/hive_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_eval/flutter_eval.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 
 part 'get_up_routine_controller.g.dart';
 
 @HiveType(typeId: 20)
-class GetUpController  extends PluginController {
+class GetUpController extends PluginController {
   GetUpController(super.plugin);
 
   @override
@@ -29,7 +30,8 @@ class GetUpController  extends PluginController {
 
   @override
   Future<Widget> loadPluginView() async {
-    if (isInstalled) return const GetUpView();
+    // Hier könnte der Code für das CompilerWidget von dem Distributionsserver geladen werden
+    if (isInstalled) return const CompilerWidget(packages: {'get_up_ui': {'main.dart': get_up_ui}}, library: 'package:get_up_ui/main.dart',);
 
     throw Exception('Plugin has to be enabled');
   }

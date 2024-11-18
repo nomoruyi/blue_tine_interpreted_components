@@ -3,7 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 class TimeOfDayAdapter extends TypeAdapter<TimeOfDay> {
   @override
-  final typeId = 003;
+  final typeId = 3;
 
   @override
   TimeOfDay read(BinaryReader reader) {

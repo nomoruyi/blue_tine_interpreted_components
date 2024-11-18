@@ -1,3 +1,4 @@
+const String get_up_routine_active = '''
 import 'package:blue_tine_interpreted_components/interfaces/data/i_plugin_routine_step_data.dart';
 import 'package:blue_tine_interpreted_components/plugins/get_up/data/get_up_routine_data.dart';
 import 'package:blue_tine_interpreted_components/plugins/get_up/data/get_up_routine_step_data.dart';
@@ -96,7 +97,7 @@ class _GetUpRoutineActiveState extends State<GetUpRoutineActive> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  routineData.routine.steps.length > stepIndex + 1 ? 'Next: ${routineData.routine.steps[stepIndex + 1].name}' : 'Last Step!',
+                  routineData.routine.steps.length > stepIndex + 1 ? 'Next: ' + routineData.routine.steps[stepIndex + 1].name : 'Last Step!',
                   style: const TextStyle(fontSize: 24.0),
                 ),
               )
@@ -197,3 +198,5 @@ class _GetUpRoutineActiveState extends State<GetUpRoutineActive> {
     }
   }
 }
+
+''';

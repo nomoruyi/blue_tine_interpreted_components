@@ -1,3 +1,4 @@
+const String get_up_step = '''
 import 'package:blue_tine_interpreted_components/plugins/get_up/data/get_up_routine_step.dart';
 import 'package:flutter/material.dart';
 
@@ -23,3 +24,5 @@ class GetUpStep extends StatelessWidget {
     );
   }
 }
+
+''';

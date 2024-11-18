@@ -2,7 +2,7 @@ import 'package:blue_tine_interpreted_components/app/ui/widgets/blue_container.d
 import 'package:blue_tine_interpreted_components/interfaces/controller/plugin_controller.dart';
 import 'package:blue_tine_interpreted_components/app/data/calendar/i_plugin_routine_data_source.dart';
 import 'package:blue_tine_interpreted_components/app/ui/widgets/blue_card.dart';
-import 'package:blue_tine_interpreted_components/utils/_utils.export.dart';
+import 'package:blue_tine_interpreted_components/utils/format_util.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

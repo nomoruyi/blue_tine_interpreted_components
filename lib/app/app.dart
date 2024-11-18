@@ -20,10 +20,6 @@ class _BlueTineAppState extends State<BlueTineApp> {
         builder: (context, state) {
           final SettingsCubit settings = BlocProvider.of<SettingsCubit>(context);
 
-          // WidgetsBinding.instance.platformDispatcher.onPlatformBrightnessChanged = () => setState(() {});
-
-          UISize.selectedUIType = settings.size;
-
           return Builder(builder: (context) {
             return MaterialApp(
               title: 'BLUEtine',

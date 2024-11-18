@@ -2,7 +2,7 @@ import 'package:hive_flutter/adapters.dart';
 
 part 'routine_status.g.dart';
 
-@HiveType(typeId: 000)
+@HiveType(typeId: 001)
 enum RoutineStatus {
   @HiveField(0)
   open,

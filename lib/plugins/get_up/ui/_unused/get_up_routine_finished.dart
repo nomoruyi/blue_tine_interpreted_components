@@ -1,3 +1,4 @@
+const String get_up_routine_finished = '''
 import 'package:blue_tine_interpreted_components/app/ui/widgets/blue_step_tile.dart';
 import 'package:blue_tine_interpreted_components/interfaces/controller/plugin_controller.dart';
 import 'package:blue_tine_interpreted_components/interfaces/data/i_plugin_routine_step_data.dart';
@@ -235,7 +236,7 @@ class _ResultPageState extends State<_ResultPage> {
                 Flexible(
                   flex: 1,
                   child: Text(
-                    'Total Duration: ${widget.routineData.duration.formatDuration()}',
+                    'Total Duration: ' + widget.routineData.duration.formatDuration(),
                     style: const TextStyle(fontSize: 32.0),
                   ),
                 ),
@@ -263,3 +264,5 @@ class _ResultPageState extends State<_ResultPage> {
     );
   }
 }
+
+''';
