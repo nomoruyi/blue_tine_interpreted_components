@@ -12,10 +12,10 @@ abstract class IPluginRoutineStep with HiveObjectMixin {
   final Duration duration;
 
   @HiveField(3, defaultValue: true)
-  final bool isActive;
+  bool isActive;
 
   @HiveField(4, defaultValue: false)
-  final bool autoNext;
+  bool autoNext;
 
   //endregion
 
